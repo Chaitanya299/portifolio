@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Livekit_voiceAgent",
+    "description": "Real-time voice AI agent enabling low-latency conversational interactions with LLM integration.",
+    "tech": ["Python", "LiveKit", "LLM", "Speech-to-Text", "Text-to-Speech", "WebRTC", "Voice AI"],
+    "github": "Livekit_voiceAgent",
+    "deepDive": {
+      "architecture": "Real-time voice pipeline using LiveKit Agents framework with modular components for STT → LLM → TTS over WebRTC.",
+      "performance": "Achieved low-latency streaming responses with optimized turn detection and real-time audio processing.",
+      "challenge": "Handling real-time synchronization between speech input, model processing, and audio output while minimizing latency."
+    }
+  },
+  {
+    "id": "2",
+    "title": "RAG-LLM app using Llama index",
+    "description": "Retrieval-Augmented Generation (RAG) system for context-aware responses from custom document datasets.",
+    "tech": ["Python", "LangChain", "FAISS", "OpenAI", "Embeddings", "RAG", "NLP"],
+    "github": "RAG-LLM",
+    "deepDive": {
+      "architecture": "Document ingestion → text chunking → embedding generation → FAISS vector storage → similarity-based retrieval → LLM generation.",
+      "performance": "Improved response accuracy and reduced hallucinations via optimized chunk size and embedding strategies.",
+      "challenge": "Tuning chunk sizes and managing embeddings to balance between too much and too little context."
+    }
+  },
+  {
+    "id": "3",
+    "title": "Devops-Calci",
+    "description": "A calculator application demonstrating DevOps practices with containerization and deployment workflows.",
+    "tech": ["Node.js", "Docker", "DevOps", "CI/CD", "JavaScript"],
+    "github": "DevOps-calci",
+    "deepDive": {
+      "architecture": "Containerized single-service application using Docker, with CI/CD pipeline integration for automated deployment.",
+      "performance": "Improved deployment efficiency by automating build and deployment steps, reducing manual setup time.",
+      "challenge": "Configuring Docker correctly and ensuring smooth CI/CD execution without environment-related issues."
+    }
+  }
+]
