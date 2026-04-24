@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sai's Portfolio OS
 
-## Getting Started
+A high-end technical portfolio built for Big Tech visibility, featuring real-time AI capabilities, a hardened communication layer, and a cinematic "OS-inspired" interface.
 
-First, run the development server:
+## 🚀 Tech Stack
 
+- **Framework:** Next.js 16 (App Router) + React 19
+- **Backend:** Convex (Real-time DB & Serverless Functions)
+- **Styling:** Tailwind CSS 4 (OKLCH Color Space)
+- **Animations:** Framer Motion
+- **Components:** Radix UI + Lucide Icons
+- **Email:** Resend (Verified Forwarding)
+- **Monitoring:** Sonner (Global Toast System)
+
+## 🛡️ Reliability & Security (Guard Rails)
+
+The inquiry system is hardened with industry-standard protection layers:
+
+1.  **DDoS Prevention:** Platform-level protection via Convex + Application-layer rate limiting.
+2.  **Strict Input Validation:** Client-side Zod schemas matched with server-side Regex and type enforcement.
+3.  **Rate Limiting:** Submissions are capped at 3 inquiries per hour per email address.
+4.  **Bot Protection (Honeypot):** Low-friction hidden field detection to block automated spam without impacting UX.
+5.  **Sanitization:** Complete input trimming and character slicing to prevent injection attacks.
+6.  **Email Abuse Protection:** Fixed templates and verified sender logic to prevent mail relay abuse.
+7.  **Error Handling:** Production-safe error boundaries that don't leak internal stack traces or server state.
+8.  **Payload Size Limits:** Hard 5KB limit on incoming request bodies to prevent memory exhaustion.
+9.  **CORS & Method Guard:** Strict enforcement of authorized origin and mutation methods.
+10. **UX Guard Rails:**
+    - Instant button disabling on submit to prevent double-click race conditions.
+    - Cinematic loading states for real-time feedback.
+    - Form auto-reset only upon verified success.
+    - Persistent success notifications via Sonner.
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js 20+
+- A Convex account (`npx convex dev`)
+- A Resend API key (for email forwarding)
+
+### Installation
 ```bash
+npm install
+npx convex dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project follows **Domain-Driven Design (DDD)** principles with bounded contexts for UI modules (Hero, Projects, Contact, etc.). All data is centralized in `src/lib/portfolio-data.ts` and synchronized with the Convex cloud for real-time interactivity.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🤖 *Powered by the Sai Portfolio OS Core*

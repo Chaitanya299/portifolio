@@ -1,0 +1,170 @@
+{
+  "agents": {
+    "agent-1776839350895-1hzpw1": {
+      "agentId": "agent-1776839350895-1hzpw1",
+      "agentType": "architect",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "provider": "anthropic"
+      },
+      "createdAt": "2026-04-22T06:29:10.895Z",
+      "model": "opus",
+      "modelRoutedBy": "default"
+    },
+    "agent-1776839352764-hr7hf5": {
+      "agentId": "agent-1776839352764-hr7hf5",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "provider": "anthropic"
+      },
+      "createdAt": "2026-04-22T06:29:12.764Z",
+      "model": "sonnet",
+      "modelRoutedBy": "default"
+    },
+    "agent-1776839355484-civ59g": {
+      "agentId": "agent-1776839355484-civ59g",
+      "agentType": "tester",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "provider": "anthropic"
+      },
+      "createdAt": "2026-04-22T06:29:15.484Z",
+      "model": "sonnet",
+      "modelRoutedBy": "default"
+    },
+    "agent-1776839357130-0gv31m": {
+      "agentId": "agent-1776839357130-0gv31m",
+      "agentType": "researcher",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "provider": "anthropic"
+      },
+      "createdAt": "2026-04-22T06:29:17.130Z",
+      "model": "sonnet",
+      "modelRoutedBy": "default"
+    },
+    "agent-1776839358790-0wn77g": {
+      "agentId": "agent-1776839358790-0wn77g",
+      "agentType": "performance-engineer",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "provider": "anthropic"
+      },
+      "createdAt": "2026-04-22T06:29:18.790Z",
+      "model": "sonnet",
+      "modelRoutedBy": "default"
+    },
+    "agent-1776841032677-xhrghk": {
+      "agentId": "agent-1776841032677-xhrghk",
+      "agentType": "tester",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {},
+      "createdAt": "2026-04-22T06:57:12.682Z",
+      "model": "sonnet",
+      "modelRoutedBy": "router"
+    },
+    "agent-1776841035772-ziukl7": {
+      "agentId": "agent-1776841035772-ziukl7",
+      "agentType": "researcher",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {},
+      "createdAt": "2026-04-22T06:57:15.780Z",
+      "model": "sonnet",
+      "modelRoutedBy": "router"
+    },
+    "agent-1776841038121-md6i9l": {
+      "agentId": "agent-1776841038121-md6i9l",
+      "agentType": "performance-engineer",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {},
+      "createdAt": "2026-04-22T06:57:18.125Z",
+      "model": "sonnet",
+      "modelRoutedBy": "router"
+    },
+    "agent-1776841039150-h2s52c": {
+      "agentId": "agent-1776841039150-h2s52c",
+      "agentType": "architect",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {},
+      "createdAt": "2026-04-22T06:57:19.152Z",
+      "model": "sonnet",
+      "modelRoutedBy": "router"
+    },
+    "agent-1776965101835-ed6tbm": {
+      "agentId": "agent-1776965101835-ed6tbm",
+      "agentType": "researcher",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "reason": "Testing MCP agent spawn due to Agent tool failure.",
+        "model": "haiku"
+      },
+      "createdAt": "2026-04-23T17:25:01.835Z",
+      "model": "haiku",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1776965285779-n4i3j0": {
+      "agentId": "agent-1776965285779-n4i3j0",
+      "agentType": "investigate",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "reason": "Investigating form failure and git history for original logic.",
+        "model": "haiku"
+      },
+      "createdAt": "2026-04-23T17:28:05.779Z",
+      "model": "haiku",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1776965322723-6fr5ck": {
+      "agentId": "agent-1776965322723-6fr5ck",
+      "agentType": "researcher",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "reason": "Locating the original contact form implementation.",
+        "model": "haiku"
+      },
+      "createdAt": "2026-04-23T17:28:42.723Z",
+      "model": "haiku",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1776965382299-jca8s1": {
+      "agentId": "agent-1776965382299-jca8s1",
+      "agentType": "reviewer",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "reason": "Final review of the implementation and text changes.",
+        "model": "haiku"
+      },
+      "createdAt": "2026-04-23T17:29:42.300Z",
+      "model": "haiku",
+      "modelRoutedBy": "explicit"
+    }
+  },
+  "version": "3.0.0"
+}

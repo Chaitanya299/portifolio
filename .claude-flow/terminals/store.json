@@ -1,0 +1,22 @@
+{
+  "sessions": {
+    "term-1776945562932-furuwy": {
+      "id": "term-1776945562932-furuwy",
+      "name": "dev-server",
+      "status": "active",
+      "createdAt": "2026-04-23T11:59:22.932Z",
+      "lastActivity": "2026-04-23T12:00:36.577Z",
+      "workingDir": "/Users/parasana/Downloads/Antigravity/portifolio",
+      "history": [
+        {
+          "command": "npm run dev",
+          "output": "\n> temp_init@0.1.0 dev\n> next dev\n\n▲ Next.js 16.2.4 (Turbopack)\n- Local:         http://localhost:3001\n- Network:       http://192.168.1.3:3001\n- Environments: .env.local\n✓ Ready in 422ms\n\u001b[?25h\n\n[stderr] ⚠ Port 3000 is in use by process 5205, using available port 3001 instead.\n⨯ Another next dev server is already running.\n\n- Local:        http://localhost:3000\n- PID:          5205\n- Dir:          /Users/parasana/Downloads/Antigravity/portifolio\n- Log:          .next/dev/logs/next-development.log\n\nRun kill 5205 to stop it.\n",
+          "timestamp": "2026-04-23T12:00:36.577Z",
+          "exitCode": 1
+        }
+      ],
+      "env": {}
+    }
+  },
+  "version": "3.0.0"
+}
