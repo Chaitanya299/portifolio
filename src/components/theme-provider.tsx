@@ -11,11 +11,11 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     setMounted(true);
   }, []);
 
-  // Standard Next.js 16/React 19 pattern for next-themes to prevent hydration issues
-  // and script-injection console errors.
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+  // To permanently resolve the "Encountered a script tag" error in React 19 / Next.js 16,
+  // we disable the next-themes inline script injection and handle mounting manually.
+  return (
+    <NextThemesProvider {...props} enableSystem={false} disableTransitionOnChange>
+      {mounted ? children : <div style={{ visibility: "hidden" }}>{children}</div>}
+    </NextThemesProvider>
+  );
 }
