@@ -3,8 +3,9 @@
 @source "../../src/**/*.{ts,tsx,mdx}";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space), sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 
   --color-background: oklch(0 0 0);
   --color-foreground: oklch(0.97 0.005 80);
@@ -48,12 +49,12 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    background-image: radial-gradient(at 20% 10%, oklch(0.82 0.16 80 / 0.18) 0px, transparent 50%),
-                      radial-gradient(at 80% 0%, oklch(0.6 0.18 250 / 0.12) 0px, transparent 50%),
-                      radial-gradient(at 0% 80%, oklch(0.7 0.14 30 / 0.1) 0px, transparent 50%),
-                      radial-gradient(at 100% 100%, oklch(0.82 0.16 80 / 0.08) 0px, transparent 50%);
-    background-attachment: fixed;
     min-height: 100vh;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
   }
 
   /* Custom Scrollbar */

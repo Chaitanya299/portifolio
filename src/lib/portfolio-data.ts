@@ -66,52 +66,52 @@ export const PORTFOLIO = {
       tagline: "Real-time voice AI on WebRTC",
       description:
         "Sub-300ms voice agent built on LiveKit + WebRTC with streaming STT, LLM reasoning, and TTS pipelined for natural turn-taking.",
-      stack: ["Python", "LiveKit", "WebRTC", "OpenAI", "Deepgram", "FastAPI"],
-      github: "https://github.com/chaitanya299/livekit-voice-agent",
+      stack: ["Python", "LiveKit", "WebRTC", "Mistral AI", "Deepgram", "FastAPI"],
+      github: "https://github.com/Chaitanya299/Livekit_voiceAgent.git",
       span: "wide",
       deepDive: {
         architecture:
-          "WebRTC ingress → Deepgram streaming STT → GPT-4o function-calling → ElevenLabs TTS → SFU egress. Stateless workers behind Redis-backed session store.",
+          "WebRTC (LiveKit) → VAD + turn detection → streaming STT → streaming LLM → streaming TTS → audio response. Orchestrated via LiveKit Agents with stateless workers and session-based context.",
         performance:
-          "Median end-to-end latency 280ms by parallelizing TTS first-byte with LLM token streaming. 4× concurrency vs naive serial pipeline.",
+          "~300–500ms end-to-end latency via fully streaming pipeline (overlapping STT, LLM, TTS instead of sequential execution).",
         challenge:
-          "Interruption handling: detecting barge-in within 80ms while the agent is still speaking required custom VAD on the inbound audio frame buffer.",
+          "Real-time interruption (barge-in): detecting intent mid-speech and cancelling in-flight generation without breaking audio continuity.",
       },
     },
     {
       id: "rag-llm",
       title: "RAG-LLM",
-      tagline: "Production RAG with LlamaIndex + FAISS",
+      tagline: "Custom RAG with LlamaIndex + Google Gemini",
       description:
-        "Hybrid retrieval engine combining BM25, dense FAISS vectors, and re-ranking for grounded enterprise Q&A over private docs.",
-      stack: ["Python", "LlamaIndex", "FAISS", "Cohere", "Postgres", "Docker"],
-      github: "https://github.com/chaitanya299/rag-llm",
+        "A focused Retrieval-Augmented Generation system using LlamaIndex to process and index PDF documents for grounded, intelligent Q&A powered by Google's Generative AI.",
+      stack: ["Python", "LlamaIndex", "Google Gemini", "PyPDF"],
+      github: "https://github.com/Chaitanya299/RAG-LLM/tree/master",
       span: "tall",
       deepDive: {
         architecture:
-          "Chunking via semantic splitter → dual indices (BM25 + FAISS HNSW) → Cohere rerank top-50 → GPT-4o answer synthesis with citation enforcement.",
+          "Document ingestion via PyPDF → Semantic indexing via LlamaIndex → Query engine integration with Google Gemini Pro for grounded response synthesis.",
         performance:
-          "Recall@10 improved from 0.71 (dense-only) to 0.93 (hybrid + rerank). p95 query latency 740ms over 2M chunks.",
+          "Optimized retrieval precision by utilizing LlamaIndex's vector store index. Minimalist pipeline designed for high-fidelity extraction from complex PDF structures.",
         challenge:
-          "Citation hallucination — solved by constrained decoding: the model can only emit chunk-IDs present in the retrieved context window.",
+          "Managing context window efficiency when querying multiple long-form documents while maintaining response latency within production-grade thresholds.",
       },
     },
     {
       id: "devops-calci",
       title: "Devops-Calci",
-      tagline: "Containerized CI/CD reference app",
+      tagline: "Hands-on DevOps learning platform with Node.js",
       description:
-        "A deceptively simple calculator wired into a full DevOps loop — multi-stage Docker, GitHub Actions, image signing, k8s rollout.",
-      stack: ["Docker", "GitHub Actions", "Kubernetes", "Cosign", "Trivy"],
-      github: "https://github.com/chaitanya299/devops-calci",
+        "A Node.js calculator engineered for DevOps mastery, featuring a 6-phase implementation journey from local development to production-grade GitOps orchestration.",
+      stack: ["Node.js", "Docker", "GitHub Actions", "Kubernetes", "Argo CD", "KinD"],
+      github: "https://github.com/Chaitanya299/DevOps-calci.git",
       span: "square",
       deepDive: {
         architecture:
-          "Multi-stage Dockerfile → Trivy scan → Cosign keyless signing via OIDC → push to GHCR → ArgoCD sync to k8s with progressive rollout.",
+          "Node.js runtime → Multi-stage Dockerization → GitHub Actions CI (parallel matrix testing) → Kubernetes (KinD) manifests → Argo CD GitOps synchronization.",
         performance:
-          "Build time cut from 3m20s to 38s via BuildKit cache mounts and dependency layer pinning. Image size 14MB on distroless base.",
+          "Achieved ~75% reduction in artifact size (50MB vs 200MB) via multi-stage builds. CI pipeline optimized for sub-minute execution across Node.js 18.x/20.x environments.",
         challenge:
-          "Achieving SLSA Level 3 provenance without a private signing key — solved with sigstore keyless OIDC flow tied to the GHA workflow identity.",
+          "Bridging the gap between manual K8s deployments and automated GitOps: configuring Argo CD for self-healing and automatic drift correction from the Git source.",
       },
     },
   ] satisfies Project[],
@@ -119,20 +119,20 @@ export const PORTFOLIO = {
     {
       id: "industrial-deploy",
       title: "Industrial-Grade Deploy Pipeline",
-      tagline: "Docker · Kubernetes · AWS — production-grade rollout stack",
+      tagline: "AWS · GitHub Actions · Scalable Infrastructure : industrial-grade rollout",
       description:
-        "An opinionated reference deployment: multi-stage Docker images pushed to ECR, GitOps-driven rollouts on EKS, Terraform-provisioned VPC + IAM, ALB ingress with cert-manager, and full observability via CloudWatch + Prometheus + Grafana. Zero-downtime blue/green via Argo Rollouts.",
-      stack: ["Docker", "Kubernetes", "AWS EKS", "Terraform", "ArgoCD", "Prometheus"],
+        "Migrating this Portfolio OS to industrial-grade infrastructure using AWS to demonstrate production-level engineering. Implementing a GitHub-triggered automated project sync system and advanced cinematic animations for a high-end, scalable user experience.",
+      stack: ["AWS", "GitHub Actions", "Docker", "Kubernetes", "Terraform", "ArgoCD"],
       status: "In Progress",
       eta: "Q2 2026",
     },
     {
-      id: "domain-rag-convex",
-      title: "Domain-Aware RAG Chatbot",
-      tagline: "Convex-backed retrieval + realtime chat over your private docs",
+      id: "domain-rag-builder",
+      title: "Domain-Aware RAG Builder",
+      tagline: "Enterprise RAG builder + domain-specific AI templates",
       description:
-        "A multi-tenant RAG chatbot where each domain (workspace) owns its embeddings, source docs, and chat history in Convex. Streaming LLM responses, citation-locked answers, and a live admin dashboard for ingestion, eval runs, and per-domain analytics. Built for teams that want a private ChatGPT over their own knowledge base.",
-      stack: ["Convex", "Next.js", "OpenAI", "pgvector", "TypeScript", "Tailwind"],
+        "A comprehensive RAG Chatbot Builder that empowers SMEs to deploy domain-specific AI agents in under an hour. Features pre-built templates for hospitality, healthcare, and software sectors, engineered with industry-level security and data privacy protocols.",
+      stack: ["Convex", "Next.js", "OpenAI", "Vector DB", "TypeScript", "Tailwind"],
       status: "Beta",
       eta: "Q1 2026",
     },
@@ -163,7 +163,7 @@ export const PORTFOLIO = {
     {
       id: "mastering-django",
       title: "Mastering Django",
-      issuer: "Technical Training",
+      issuer: "",
       link: "https://drive.google.com/file/d/1tLHtUUc0AuF4MBiPEFOtXAuEtBbmDvou/view",
       learnings: [
         "Built scalable, secure web applications using Python's primary framework.",
@@ -174,7 +174,7 @@ export const PORTFOLIO = {
     {
       id: "gen-ai",
       title: "Generative AI Foundations",
-      issuer: "AI Research",
+      issuer: "Microsoft / upGrad",
       link: "https://drive.google.com/file/d/10_Y8CUsY8J6t8ABM_AxVL5df1rZ3wcRa/view",
       learnings: [
         "Advanced prompt engineering techniques for high-fidelity LLM outputs.",

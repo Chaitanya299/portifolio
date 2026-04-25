@@ -26,12 +26,15 @@ function CertificateCard({ cert }: { cert: Certificate }) {
         </a>
       </div>
 
-      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
+      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors font-display">
         {cert.title}
       </h3>
-      <p className="text-sm font-mono text-zinc-500 mb-6 uppercase tracking-wider italic">
-        Issued by {cert.issuer}
-      </p>
+      {cert.issuer && (
+        <p className="text-sm font-mono text-zinc-500 mb-6 uppercase tracking-wider italic">
+          Issued by {cert.issuer}
+        </p>
+      )}
+      {!cert.issuer && <div className="mb-6" />}
 
       <button
         onClick={() => setExpanded(!expanded)}
@@ -74,9 +77,9 @@ export function Achievements() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-16">
           <div className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.3em] text-primary">
-            / 04 — Achievements
+            / 04 : Achievements
           </div>
-          <h2 className="max-w-2xl text-balance text-3xl font-bold tracking-tight text-white sm:text-5xl">
+          <h2 className="max-w-2xl text-balance text-3xl font-bold tracking-tight text-white sm:text-5xl font-display">
             Certifications & <span className="text-primary">Global Recognition.</span>
           </h2>
           <p className="mt-4 max-w-xl text-zinc-400">

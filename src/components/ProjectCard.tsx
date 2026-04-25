@@ -5,6 +5,7 @@ import type { Project } from "@/lib/portfolio-data";
 
 interface ProjectCardProps {
   project: Project;
+  index: number;
   className?: string;
 }
 
@@ -14,7 +15,7 @@ const deepDiveSections: Array<{ key: keyof Project["deepDive"]; label: string; s
   { key: "challenge", label: "Key Challenge", symbol: "!" },
 ];
 
-export function ProjectCard({ project, className = "" }: ProjectCardProps) {
+export function ProjectCard({ project, index, className = "" }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -31,8 +32,7 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
           <div className="mb-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-            project<span className="text-primary">/</span>0{deepDiveSections.length === 3 ? "" : ""}
-            {project.id.slice(0, 4)}
+            project<span className="text-primary">/</span>0{index}
           </div>
           <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
             {project.title}

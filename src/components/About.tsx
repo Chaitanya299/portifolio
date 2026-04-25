@@ -27,9 +27,9 @@ export function About() {
         <div className="mb-12 flex items-end justify-between gap-6">
           <div>
             <div className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.3em] text-primary">
-              / 01 — About
+              / 01 : About
             </div>
-            <h2 className="max-w-2xl text-balance text-3xl font-bold tracking-tight text-white sm:text-5xl">
+            <h2 className="max-w-2xl text-balance text-3xl font-bold tracking-tight text-white sm:text-5xl font-display">
               {PORTFOLIO.role} obsessed with the gap between <span className="text-primary">prototype and production.</span>
             </h2>
           </div>
@@ -51,7 +51,7 @@ export function About() {
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-primary transition-all group-hover:border-primary/40 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.2)]">
                 <p.icon className="h-5 w-5" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-white">{p.title}</h3>
+              <h3 className="mb-2 text-lg font-bold text-white font-display">{p.title}</h3>
               <p className="text-sm leading-relaxed text-zinc-400">{p.body}</p>
             </motion.div>
           ))}

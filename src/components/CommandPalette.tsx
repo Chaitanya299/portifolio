@@ -17,6 +17,7 @@ import { GithubIcon, LinkedinIcon } from "./Icons";
 import { PORTFOLIO } from "@/lib/portfolio-data";
 import { toast } from "sonner";
 import { getBaseUrl } from "@/lib/utils";
+import { useEmailAction } from "@/hooks/use-email";
 
 interface CommandPaletteProps {
   open: boolean;
@@ -33,6 +34,7 @@ function scrollToId(id: string) {
 
 export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
   const { theme, setTheme } = useTheme();
+  const { handleEmailClick } = useEmailAction();
 
   const run = useCallback(
     (fn: () => void) => {
@@ -52,11 +54,6 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
     const baseUrl = getBaseUrl();
     navigator.clipboard.writeText(`curl ${baseUrl}/api/me.json`);
     toast.success("Command copied to clipboard!");
-  };
-
-  const handleEmailClick = () => {
-    window.location.href = `mailto:${PORTFOLIO.email}`;
-    toast.info("Opening your email client...");
   };
 
   if (!open) return null;
@@ -138,7 +135,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
               </Item>
               <Item
                 icon={<Mail className="h-4 w-4" />}
-                onSelect={() => run(handleEmailClick)}
+                onSelect={() => run(() => handleEmailClick())}
               >
                 Email
                 <ArrowRight className="ml-auto h-3.5 w-3.5 text-zinc-600" />

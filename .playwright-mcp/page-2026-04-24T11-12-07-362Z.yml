@@ -1,0 +1,321 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e9]: SAI.CHAITANYA/DEV
+        - navigation [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: "#about"
+          - link "Projects" [ref=e12] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Upcoming" [ref=e13] [cursor=pointer]:
+            - /url: "#upcoming"
+          - link "Achievements" [ref=e14] [cursor=pointer]:
+            - /url: "#achievements"
+          - link "Contact" [ref=e15] [cursor=pointer]:
+            - /url: "#contact"
+        - button "Open command palette" [ref=e17]:
+          - img [ref=e18]
+          - generic [ref=e20]: Search
+          - generic [ref=e21]: ⌘K
+    - main [ref=e22]:
+      - generic [ref=e24]:
+        - button "Press ⌘K to navigate" [ref=e26]:
+          - img [ref=e27]
+          - generic [ref=e30]: Press
+          - generic [ref=e31]: ⌘K
+          - generic [ref=e32]: to navigate
+        - generic [ref=e33]: Hi, my name is
+        - heading "Sai Chaitanya Parasana." [level=1] [ref=e34]:
+          - text: Sai Chaitanya
+          - text: Parasana.
+        - heading "I build AI-native systems with precision." [level=2] [ref=e35]
+        - paragraph [ref=e36]: I design and deploy AI-native systems with a focus on real-time inference, high-throughput RAG architectures, and automated DevOps infrastructure.
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - link "View projects" [ref=e39] [cursor=pointer]:
+              - /url: "#projects"
+              - text: View projects
+              - img [ref=e40]
+            - link "Hire me" [ref=e42] [cursor=pointer]:
+              - /url: "#contact"
+          - generic [ref=e43]:
+            - link "GitHub" [ref=e44] [cursor=pointer]:
+              - /url: https://github.com/Chaitanya299
+              - img [ref=e45]
+              - generic [ref=e47]: GitHub
+            - link "LinkedIn" [ref=e48] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/saichaitanyaparasana
+              - img [ref=e49]
+              - generic [ref=e53]: LinkedIn
+            - link "Email" [ref=e54] [cursor=pointer]:
+              - /url: mailto:chaitanya.sai311@gmail.com
+              - img [ref=e55]
+              - generic [ref=e58]: Email
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: Stack
+            - generic [ref=e63]: AI · Cloud · DevOps
+          - generic [ref=e64]:
+            - generic [ref=e65]: Focus
+            - generic [ref=e67]: End-to-End Solutions
+          - generic [ref=e68]:
+            - generic [ref=e69]: Status
+            - generic [ref=e74]: Available
+      - generic [ref=e76]:
+        - generic [ref=e78]:
+          - generic [ref=e79]: / 01 — About
+          - heading "Full Stack & AI Engineer obsessed with the gap between prototype and production." [level=2] [ref=e80]
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e84]
+            - heading "AI Engineering" [level=3] [ref=e87]
+            - paragraph [ref=e88]: RAG, agents, fine-tuning, and inference optimization for production workloads.
+          - generic [ref=e89]:
+            - img [ref=e91]
+            - heading "Realtime Systems" [level=3] [ref=e96]
+            - paragraph [ref=e97]: Real-time streaming pipelines, WebRTC integration, and low-latency audio/video architectures for seamless AI interaction.
+          - generic [ref=e98]:
+            - img [ref=e100]
+            - heading "Platform & Infra" [level=3] [ref=e104]
+            - paragraph [ref=e105]: Infrastructure-as-Code, container orchestration, and automated CI/CD for secure, scalable software delivery.
+      - generic [ref=e107]:
+        - generic [ref=e108]:
+          - generic [ref=e109]: / 02 — Selected Work
+          - heading "Three systems. Each architected & instrumented." [level=2] [ref=e110]
+        - generic [ref=e111]:
+          - article [ref=e112]:
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - generic [ref=e115]: project/01
+                - heading "Livekit_voiceAgent" [level=3] [ref=e116]
+                - paragraph [ref=e117]: Real-time voice AI on WebRTC
+              - link "GitHub" [ref=e119] [cursor=pointer]:
+                - /url: https://github.com/Chaitanya299/Livekit_voiceAgent.git
+                - img [ref=e120]
+            - paragraph [ref=e124]: Sub-300ms voice agent built on LiveKit + WebRTC with streaming STT, LLM reasoning, and TTS pipelined for natural turn-taking.
+            - generic [ref=e125]:
+              - generic [ref=e126]: Python
+              - generic [ref=e127]: LiveKit
+              - generic [ref=e128]: WebRTC
+              - generic [ref=e129]: OpenAI
+              - generic [ref=e130]: Deepgram
+              - generic [ref=e131]: FastAPI
+            - button "$ ./deep-dive --show" [ref=e133]:
+              - generic [ref=e134]:
+                - img [ref=e135]
+                - generic [ref=e137]: $ ./deep-dive --show
+              - img [ref=e138]
+          - article [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e143]: project/02
+                - heading "RAG-LLM" [level=3] [ref=e144]
+                - paragraph [ref=e145]: Custom RAG with LlamaIndex + Google Gemini
+              - link "GitHub" [ref=e147] [cursor=pointer]:
+                - /url: https://github.com/Chaitanya299/RAG-LLM/tree/master
+                - img [ref=e148]
+            - paragraph [ref=e152]: A focused Retrieval-Augmented Generation system using LlamaIndex to process and index PDF documents for grounded, intelligent Q&A powered by Google's Generative AI.
+            - generic [ref=e153]:
+              - generic [ref=e154]: Python
+              - generic [ref=e155]: LlamaIndex
+              - generic [ref=e156]: Google Gemini
+              - generic [ref=e157]: PyPDF
+              - generic [ref=e158]: Dotenv
+            - button "$ ./deep-dive --show" [ref=e160]:
+              - generic [ref=e161]:
+                - img [ref=e162]
+                - generic [ref=e164]: $ ./deep-dive --show
+              - img [ref=e165]
+          - article [ref=e167]:
+            - generic [ref=e168]:
+              - generic [ref=e169]:
+                - generic [ref=e170]: project/03
+                - heading "Devops-Calci" [level=3] [ref=e171]
+                - paragraph [ref=e172]: Hands-on DevOps learning platform with Node.js
+              - link "GitHub" [ref=e174] [cursor=pointer]:
+                - /url: https://github.com/Chaitanya299/DevOps-calci.git
+                - img [ref=e175]
+            - paragraph [ref=e179]: A Node.js calculator engineered for DevOps mastery, featuring a 6-phase implementation journey from local development to production-grade GitOps orchestration.
+            - generic [ref=e180]:
+              - generic [ref=e181]: Node.js
+              - generic [ref=e182]: Docker
+              - generic [ref=e183]: GitHub Actions
+              - generic [ref=e184]: Kubernetes
+              - generic [ref=e185]: Argo CD
+              - generic [ref=e186]: KinD
+            - button "$ ./deep-dive --show" [ref=e188]:
+              - generic [ref=e189]:
+                - img [ref=e190]
+                - generic [ref=e192]: $ ./deep-dive --show
+              - img [ref=e193]
+      - generic [ref=e196]:
+        - generic [ref=e197]:
+          - generic [ref=e198]: / 03 — On the Roadmap
+          - heading "What I'm shipping next." [level=2] [ref=e199]
+          - paragraph [ref=e200]: In-flight work — production deploy pipelines and a domain-aware RAG chatbot.
+        - generic [ref=e201]:
+          - article [ref=e202]:
+            - generic [ref=e203]:
+              - img [ref=e205]
+              - generic [ref=e210]:
+                - generic [ref=e211]: In Progress
+                - generic [ref=e212]:
+                  - img [ref=e213]
+                  - text: Q2 2026
+            - heading "Industrial-Grade Deploy Pipeline" [level=3] [ref=e216]
+            - paragraph [ref=e217]: Docker · Kubernetes · AWS — production-grade rollout stack
+            - paragraph [ref=e218]: "An opinionated reference deployment: multi-stage Docker images pushed to ECR, GitOps-driven rollouts on EKS, Terraform-provisioned VPC + IAM, ALB ingress with cert-manager, and full observability via CloudWatch + Prometheus + Grafana. Zero-downtime blue/green via Argo Rollouts."
+            - generic [ref=e219]:
+              - generic [ref=e220]: Docker
+              - generic [ref=e221]: Kubernetes
+              - generic [ref=e222]: AWS EKS
+              - generic [ref=e223]: Terraform
+              - generic [ref=e224]: ArgoCD
+              - generic [ref=e225]: Prometheus
+          - article [ref=e226]:
+            - generic [ref=e227]:
+              - img [ref=e229]
+              - generic [ref=e234]:
+                - generic [ref=e235]: Beta
+                - generic [ref=e236]:
+                  - img [ref=e237]
+                  - text: Q1 2026
+            - heading "Domain-Aware RAG Chatbot" [level=3] [ref=e240]
+            - paragraph [ref=e241]: Convex-backed retrieval + realtime chat over your private docs
+            - paragraph [ref=e242]: A multi-tenant RAG chatbot where each domain (workspace) owns its embeddings, source docs, and chat history in Convex. Streaming LLM responses, citation-locked answers, and a live admin dashboard for ingestion, eval runs, and per-domain analytics. Built for teams that want a private ChatGPT over their own knowledge base.
+            - generic [ref=e243]:
+              - generic [ref=e244]: Convex
+              - generic [ref=e245]: Next.js
+              - generic [ref=e246]: OpenAI
+              - generic [ref=e247]: pgvector
+              - generic [ref=e248]: TypeScript
+              - generic [ref=e249]: Tailwind
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253]: / 04 — Achievements
+          - heading "Certifications & Global Recognition." [level=2] [ref=e254]
+          - paragraph [ref=e255]: Validated expertise through industry-standard certifications and consistent excellence in extracurricular pursuits.
+        - generic [ref=e256]:
+          - generic [ref=e257]:
+            - generic [ref=e258]:
+              - img [ref=e260]
+              - link [ref=e263] [cursor=pointer]:
+                - /url: https://drive.google.com/file/d/1QvxkMBhskNkW-y7IkX7a-S5FKO_5VwdQ/view
+                - img [ref=e264]
+            - heading "AWS Cloud Practitioner" [level=3] [ref=e268]
+            - paragraph [ref=e269]: Issued by Amazon Web Services
+            - button "./view-learnings --show" [ref=e270]:
+              - generic [ref=e271]:
+                - img [ref=e272]
+                - generic [ref=e274]: ./view-learnings --show
+              - img [ref=e275]
+          - generic [ref=e277]:
+            - generic [ref=e278]:
+              - img [ref=e280]
+              - link [ref=e283] [cursor=pointer]:
+                - /url: https://drive.google.com/file/d/1XSeJ27istaznc6wHCDkI-vkB5yw9XGTR/view
+                - img [ref=e284]
+            - heading "Azure AI Fundamentals" [level=3] [ref=e288]
+            - paragraph [ref=e289]: Issued by Microsoft
+            - button "./view-learnings --show" [ref=e290]:
+              - generic [ref=e291]:
+                - img [ref=e292]
+                - generic [ref=e294]: ./view-learnings --show
+              - img [ref=e295]
+          - generic [ref=e297]:
+            - generic [ref=e298]:
+              - img [ref=e300]
+              - link [ref=e303] [cursor=pointer]:
+                - /url: https://drive.google.com/file/d/1tLHtUUc0AuF4MBiPEFOtXAuEtBbmDvou/view
+                - img [ref=e304]
+            - heading "Mastering Django" [level=3] [ref=e308]
+            - paragraph [ref=e309]: Issued by Technical Training
+            - button "./view-learnings --show" [ref=e310]:
+              - generic [ref=e311]:
+                - img [ref=e312]
+                - generic [ref=e314]: ./view-learnings --show
+              - img [ref=e315]
+          - generic [ref=e317]:
+            - generic [ref=e318]:
+              - img [ref=e320]
+              - link [ref=e323] [cursor=pointer]:
+                - /url: https://drive.google.com/file/d/10_Y8CUsY8J6t8ABM_AxVL5df1rZ3wcRa/view
+                - img [ref=e324]
+            - heading "Generative AI Foundations" [level=3] [ref=e328]
+            - paragraph [ref=e329]: Issued by AI Research
+            - button "./view-learnings --show" [ref=e330]:
+              - generic [ref=e331]:
+                - img [ref=e332]
+                - generic [ref=e334]: ./view-learnings --show
+              - img [ref=e335]
+        - generic [ref=e337]:
+          - generic [ref=e338]:
+            - generic [ref=e339]:
+              - img [ref=e340]
+              - heading "Financial Engineering" [level=4] [ref=e342]
+            - paragraph [ref=e343]: Keen interest in financial education and literacy. Good understanding of financial accounting and analysis.
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - img [ref=e346]
+              - heading "International Martial Arts" [level=4] [ref=e352]
+            - paragraph [ref=e353]: International Martial Arts winner and Brown belt holder. Disciplined in precision and focus.
+          - generic [ref=e354]:
+            - generic [ref=e355]:
+              - img [ref=e356]
+              - heading "Endeavors & Hobbies" [level=4] [ref=e358]
+            - paragraph [ref=e359]: Actively up-skilling in modern technologies. Enthusiast of book reading, horse riding, and swimming.
+      - generic [ref=e361]:
+        - generic [ref=e362]:
+          - generic [ref=e363]: / 05 — Inquiry
+          - heading "Have a problem worth solving? Let's talk." [level=2] [ref=e364]
+          - paragraph [ref=e365]: Freelance & contract availability — typically reply within 24 hours.
+        - generic [ref=e366]:
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - generic [ref=e370]: Name
+              - textbox "Name" [ref=e371]:
+                - /placeholder: Ada Lovelace
+            - generic [ref=e372]:
+              - generic [ref=e374]: Email
+              - textbox "Email" [ref=e375]:
+                - /placeholder: ada@example.com
+          - generic [ref=e376]:
+            - generic [ref=e378]: Message
+            - textbox "Message" [ref=e379]:
+              - /placeholder: Tell me about the project, scope, and timeline…
+          - generic [ref=e380]:
+            - generic [ref=e381]:
+              - link "email directly →" [ref=e382] [cursor=pointer]:
+                - /url: mailto:chaitanya.sai311@gmail.com
+              - button "copy address" [ref=e383]:
+                - img [ref=e384]
+                - text: copy address
+            - button "Send inquiry" [ref=e387]:
+              - img [ref=e388]
+              - generic [ref=e391]: Send inquiry
+        - generic [ref=e392]:
+          - img [ref=e393]
+          - generic [ref=e395]: "tip: try"
+          - code [ref=e396]: curl /api/me.json
+    - contentinfo [ref=e397]:
+      - generic [ref=e398]:
+        - generic [ref=e399]:
+          - generic [ref=e400]: © 2026 Sai Chaitanya Parasana
+          - generic [ref=e401]: Crafting technical software for high-impact teams.
+        - generic [ref=e402]:
+          - button "curl /api/me.json" [ref=e403]:
+            - img [ref=e404]
+            - text: curl /api/me.json
+          - link "GitHub" [ref=e406] [cursor=pointer]:
+            - /url: https://github.com/Chaitanya299
+            - img [ref=e407]
+          - link "LinkedIn" [ref=e409] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/saichaitanyaparasana
+            - img [ref=e410]
+          - link "Email me" [ref=e414] [cursor=pointer]:
+            - /url: mailto:chaitanya.sai311@gmail.com
+            - img [ref=e415]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e423] [cursor=pointer]:
+    - img [ref=e424]

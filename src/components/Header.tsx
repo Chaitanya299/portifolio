@@ -2,12 +2,15 @@ import { motion } from "framer-motion";
 import { Command as CommandIcon, Mail } from "lucide-react";
 import { PORTFOLIO } from "@/lib/portfolio-data";
 import { toast } from "sonner";
+import { useEmailAction } from "@/hooks/use-email";
 
 interface HeaderProps {
   onOpenPalette: () => void;
 }
 
 export function Header({ onOpenPalette }: HeaderProps) {
+  const { handleEmailClick } = useEmailAction();
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -12 }}
@@ -45,14 +48,13 @@ export function Header({ onOpenPalette }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href={`mailto:${PORTFOLIO.email}`}
-            onClick={() => toast.info("Opening your email client...")}
+          <button
+            onClick={handleEmailClick}
             className="rounded-full border border-white/10 bg-white/5 p-2 text-zinc-400 transition-all hover:border-amber-500/30 hover:bg-amber-500/10 hover:text-amber-500 md:hidden"
             aria-label="Email me"
           >
             <Mail className="h-4 w-4" />
-          </a>
+          </button>
           <button
             onClick={onOpenPalette}
             aria-label="Open command palette"

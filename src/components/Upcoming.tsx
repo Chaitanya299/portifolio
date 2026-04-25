@@ -14,13 +14,13 @@ export function Upcoming() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12">
           <div className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.3em] text-primary">
-            / 03 — On the Roadmap
+            / 03 : On the Roadmap
           </div>
           <h2 className="max-w-2xl text-balance text-3xl font-bold tracking-tight text-white sm:text-5xl">
             What I'm <span className="text-primary">shipping next.</span>
           </h2>
           <p className="mt-3 max-w-2xl text-zinc-400">
-            In-flight work — production deploy pipelines and a domain-aware RAG chatbot.
+            In-flight work: production deploy pipelines and a domain-aware RAG builder.
           </p>
         </div>
 

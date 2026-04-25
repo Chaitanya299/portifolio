@@ -3,11 +3,10 @@ import { ArrowDown, Sparkles, Mail } from "lucide-react";
 import { PORTFOLIO } from "@/lib/portfolio-data";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 import { toast } from "sonner";
+import { useEmailAction } from "@/hooks/use-email";
 
 export function Hero({ onOpenPalette }: { onOpenPalette: () => void }) {
-  const handleEmailClick = () => {
-    toast.info("Opening your email client...");
-  };
+  const { handleEmailClick } = useEmailAction();
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center px-4 pt-32 pb-20 overflow-hidden">
@@ -32,7 +31,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette: () => void }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-balance text-6xl font-bold leading-[1.05] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[8rem]"
+          className="text-balance text-6xl font-bold leading-[1.05] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[8rem] font-display"
         >
           Sai Chaitanya
           <br />
@@ -43,9 +42,9 @@ export function Hero({ onOpenPalette }: { onOpenPalette: () => void }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="mt-8 text-balance text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-4xl"
+          className="mt-8 text-balance text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-4xl font-display"
         >
-          I build <span className="text-white">AI-native systems</span> that ship.
+          I build <span className="text-white">AI-native systems</span> with precision.
         </motion.h2>
 
         <motion.p
@@ -98,14 +97,13 @@ export function Hero({ onOpenPalette }: { onOpenPalette: () => void }) {
               <LinkedinIcon className="h-5 w-5" />
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest transition-opacity group-hover:opacity-100 opacity-0 sm:opacity-0 sm:group-hover:opacity-100">LinkedIn</span>
             </a>
-            <a
-              href={`mailto:${PORTFOLIO.email}`}
-              onClick={() => toast.info("Opening your email client...")}
+            <button
+              onClick={handleEmailClick}
               className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-white"
             >
               <Mail className="h-5 w-5" />
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest transition-opacity group-hover:opacity-100 opacity-0 sm:opacity-0 sm:group-hover:opacity-100">Email</span>
-            </a>
+            </button>
           </div>
         </motion.div>
 
@@ -113,13 +111,21 @@ export function Hero({ onOpenPalette }: { onOpenPalette: () => void }) {
           {[
             { k: "Stack", v: "AI · Cloud · DevOps" },
             { k: "Focus", v: "End-to-End Solutions" },
-            { k: "Status", v: "Available" },
+            { k: "Status", v: "Available", live: true },
           ].map((s) => (
-            <div key={s.k} className="bg-black/40 px-6 py-5 text-left backdrop-blur-sm">
+            <div key={s.k} className="bg-black/40 px-6 py-5 text-left backdrop-blur-sm relative group/stat">
               <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500">
                 {s.k}
               </div>
-              <div className="mt-1.5 truncate text-sm font-semibold text-zinc-300">{s.v}</div>
+              <div className="mt-1.5 flex items-center gap-2">
+                {s.live && (
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                )}
+                <div className="truncate text-sm font-semibold text-zinc-300">{s.v}</div>
+              </div>
             </div>
           ))}
         </div>

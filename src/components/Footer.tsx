@@ -3,8 +3,10 @@ import { Mail, Terminal } from "lucide-react";
 import { PORTFOLIO } from "@/lib/portfolio-data";
 import { toast } from "sonner";
 import { getBaseUrl } from "@/lib/utils";
+import { useEmailAction } from "@/hooks/use-email";
 
 export function Footer() {
+  const { handleEmailClick } = useEmailAction();
   const baseUrl = getBaseUrl();
   const curlUrl = `curl ${baseUrl}/api/me.json`;
 
@@ -23,7 +25,7 @@ export function Footer() {
         <div className="relative z-30 flex flex-wrap items-center gap-3">
           <button
             onClick={() => {
-              navigator.clipboard.writeText(curlUrl);
+              navigator.clipboard.writeText(`curl ${baseUrl}/api/me.json`);
               toast.success("Command copied to clipboard!");
             }}
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/50 px-4 py-2 font-mono text-[11px] text-zinc-400 transition-all hover:border-amber-500/40 hover:text-white"
@@ -49,14 +51,13 @@ export function Footer() {
           >
             <LinkedinIcon className="h-4.5 w-4.5" />
           </a>
-          <a
-            href={`mailto:${PORTFOLIO.email}`}
-            onClick={() => toast.info("Opening your email client...")}
+          <button
+            onClick={handleEmailClick}
             className="rounded-full border border-white/10 bg-zinc-900/50 p-2.5 text-zinc-400 transition-all hover:border-amber-500/40 hover:text-white"
             aria-label="Email me"
           >
             <Mail className="h-4.5 w-4.5" />
-          </a>
+          </button>
         </div>
       </div>
     </footer>

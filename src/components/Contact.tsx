@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { Send, Check, AlertCircle, Terminal, Copy } from "lucide-react";
@@ -6,6 +6,7 @@ import { PORTFOLIO } from "@/lib/portfolio-data";
 import { toast } from "sonner";
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { useEmailAction } from "@/hooks/use-email";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(80, "Too long"),
@@ -20,17 +21,18 @@ export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const formRef = useRef<HTMLFormElement>(null);
   const submitInquiry = useMutation(api.portfolio.submitInquiry);
+  const { handleEmailClick } = useEmailAction();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (status === "sending") return; // Prevent double submission
+    if (status === "sending") return;
 
     const fd = new FormData(e.currentTarget);
     const data = {
       name: String(fd.get("name") ?? ""),
       email: String(fd.get("email") ?? ""),
       message: String(fd.get("message") ?? ""),
-      honeypot: String(fd.get("website") ?? ""), // Hidden field name 'website'
+      honeypot: String(fd.get("website") ?? ""),
     };
 
     const parsed = schema.safeParse(data);
@@ -63,7 +65,6 @@ export function Contact() {
         formRef.current?.reset();
         setTimeout(() => setStatus("idle"), 5000);
       } else {
-        // Handle bot detection or other silent failures
         setStatus("idle");
         toast.error("Submission failed. Please try again or email directly.", { id: toastId });
       }
@@ -92,14 +93,14 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-            <div className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.3em] text-primary">
-              / 05 — Inquiry
-            </div>
-          <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-5xl">
+          <div className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.3em] text-primary">
+            / 05 : Inquiry
+          </div>
+          <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-5xl font-display">
             Have a problem worth solving? <span className="text-primary">Let's talk.</span>
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Freelance & contract availability — typically reply within 24 hours.
+            Freelance & contract availability: typically reply within 24 hours.
           </p>
         </motion.div>
 
@@ -112,7 +113,6 @@ export function Contact() {
           onSubmit={onSubmit}
           className="space-y-4 rounded-2xl border border-border bg-card/60 p-6 sm:p-8"
         >
-          {/* Honeypot field - hidden from users */}
           <input type="text" name="website" className="hidden" aria-hidden="true" tabIndex={-1} />
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -127,13 +127,13 @@ export function Contact() {
           />
           <div className="flex items-center justify-between gap-3 pt-2">
             <div className="flex gap-4">
-              <a
-                href={`mailto:${PORTFOLIO.email}`}
-                onClick={() => toast.info("Opening your email client...")}
+              <button
+                type="button"
+                onClick={handleEmailClick}
                 className="font-mono text-xs text-muted-foreground hover:text-white transition-colors"
               >
                 email directly →
-              </a>
+              </button>
               <button
                 type="button"
                 onClick={copyToClipboard}
@@ -165,11 +165,19 @@ export function Contact() {
           </div>
         </motion.form>
 
-
         <div className="mt-8 flex items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-muted/20 px-4 py-3 font-mono text-[11px] text-muted-foreground">
           <Terminal className="h-3.5 w-3.5 text-primary" />
           <span>tip: try</span>
-          <code className="rounded bg-background/80 px-1.5 py-0.5 text-foreground">curl /api/me.json</code>
+          <button
+            onClick={() => {
+              const url = `curl ${window.location.origin}/api/me.json`;
+              navigator.clipboard.writeText(url);
+              toast.success("Command copied!");
+            }}
+            className="rounded bg-background/80 px-1.5 py-0.5 text-foreground hover:text-primary transition-colors font-mono"
+          >
+            curl /api/me.json
+          </button>
         </div>
       </div>
     </section>
