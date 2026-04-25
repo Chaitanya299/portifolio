@@ -2,8 +2,6 @@ import { action } from "./_generated/server";
 import { v } from "convex/values";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const sendInquiryEmail = action({
   args: {
     name: v.string(),
@@ -18,6 +16,8 @@ export const sendInquiryEmail = action({
       console.error(errorMsg);
       throw new Error(errorMsg);
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     try {
       const response = await resend.emails.send({
