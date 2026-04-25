@@ -8,7 +8,6 @@ import { useEmailAction } from "@/hooks/use-email";
 export function Footer() {
   const { handleEmailClick } = useEmailAction();
   const baseUrl = getBaseUrl();
-  const curlUrl = `curl ${baseUrl}/api/me.json`;
 
   return (
     <footer className="relative border-t border-white/10 px-4 py-16">

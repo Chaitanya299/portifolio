@@ -19,9 +19,14 @@ type FieldErrors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 export function Contact() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [mounted, setMounted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const submitInquiry = useMutation(api.portfolio.submitInquiry);
   const { handleEmailClick } = useEmailAction();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -68,13 +73,13 @@ export function Contact() {
         setStatus("idle");
         toast.error("Submission failed. Please try again or email directly.", { id: toastId });
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
       setStatus("idle");
-      const message = err.message?.includes("Rate limit")
+      const errorMessage = (err instanceof Error && err.message?.includes("Rate limit"))
         ? "Too many requests. Please try again in an hour."
         : "Failed to send. Please try the email link below.";
-      toast.error(message, { id: toastId });
+      toast.error(errorMessage, { id: toastId });
     }
   }
 
@@ -82,6 +87,8 @@ export function Contact() {
     navigator.clipboard.writeText(PORTFOLIO.email);
     toast.success("Email address copied to clipboard!");
   };
+
+  if (!mounted) return null;
 
   return (
     <section id="contact" className="relative scroll-mt-24 px-4 py-24">
@@ -97,7 +104,7 @@ export function Contact() {
             / 05 : Inquiry
           </div>
           <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-5xl font-display">
-            Have a problem worth solving? <span className="text-primary">Let's talk.</span>
+            Have a problem worth solving? <span className="text-primary">Let&apos;s talk.</span>
           </h2>
           <p className="mt-3 text-muted-foreground">
             Freelance & contract availability: typically reply within 24 hours.
@@ -116,14 +123,15 @@ export function Contact() {
           <input type="text" name="website" className="hidden" aria-hidden="true" tabIndex={-1} />
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Name" name="name" placeholder="Ada Lovelace" />
-            <Field label="Email" name="email" type="email" placeholder="ada@example.com" />
+            <Field label="Name" name="name" placeholder="Ada Lovelace" error={errors.name} />
+            <Field label="Email" name="email" type="email" placeholder="ada@example.com" error={errors.email} />
           </div>
           <Field
             label="Message"
             name="message"
             placeholder="Tell me about the project, scope, and timeline…"
             textarea
+            error={errors.message}
           />
           <div className="flex items-center justify-between gap-3 pt-2">
             <div className="flex gap-4">

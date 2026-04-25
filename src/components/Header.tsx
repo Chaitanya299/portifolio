@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Command as CommandIcon, Mail } from "lucide-react";
-import { PORTFOLIO } from "@/lib/portfolio-data";
-import { toast } from "sonner";
 import { useEmailAction } from "@/hooks/use-email";
 
 interface HeaderProps {

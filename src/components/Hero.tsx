@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowDown, Sparkles, Mail } from "lucide-react";
 import { PORTFOLIO } from "@/lib/portfolio-data";
 import { GithubIcon, LinkedinIcon } from "./Icons";
-import { toast } from "sonner";
 import { useEmailAction } from "@/hooks/use-email";
 
 export function Hero({ onOpenPalette }: { onOpenPalette: () => void }) {

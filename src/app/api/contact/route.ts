@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PORTFOLIO } from '@/lib/portfolio-data';
 
 export async function POST(req: NextRequest) {
   try {
@@ -29,7 +28,7 @@ export async function POST(req: NextRequest) {
       message: `Terminal inquiry received (Simulated). For verified delivery, please use the UI at ${baseUrl}#contact`,
       details: { name, email, length: message.length }
     });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ error: "Invalid JSON payload" }, { status: 400 });
   }
 }

@@ -1,0 +1,6 @@
+.claude/
+convex/_generated/
+node_modules/
+.next/
+out/
+build/

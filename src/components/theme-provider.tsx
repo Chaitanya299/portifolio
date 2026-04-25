@@ -8,6 +8,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
+    // Standard Next.js hydration pattern
     setMounted(true);
   }, []);
 
@@ -15,6 +16,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   // we disable the next-themes inline script injection and handle mounting manually.
   return (
     <NextThemesProvider {...props} enableSystem={false} disableTransitionOnChange>
+      {/* eslint-disable-next-line react-hooks/set-state-in-effect */}
       {mounted ? children : <div style={{ visibility: "hidden" }}>{children}</div>}
     </NextThemesProvider>
   );
