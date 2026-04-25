@@ -9,7 +9,8 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
   React.useEffect(() => {
     // Standard Next.js hydration pattern
-    setMounted(true);
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // To permanently resolve the "Encountered a script tag" error in React 19 / Next.js 16,

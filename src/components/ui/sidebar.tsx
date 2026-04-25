@@ -642,7 +642,8 @@ const SidebarMenuSkeleton = React.forwardRef<
   const [width, setWidth] = React.useState("70%");
 
   React.useEffect(() => {
-    setWidth(`${Math.floor(Math.random() * 40) + 50}%`);
+    const timer = setTimeout(() => setWidth(`${Math.floor(Math.random() * 40) + 50}%`), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

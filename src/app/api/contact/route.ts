@@ -28,7 +28,8 @@ export async function POST(req: NextRequest) {
       message: `Terminal inquiry received (Simulated). For verified delivery, please use the UI at ${baseUrl}#contact`,
       details: { name, email, length: message.length }
     });
-  } catch (_error) {
+  } catch (error) {
+    console.error("API contact error:", error);
     return NextResponse.json({ error: "Invalid JSON payload" }, { status: 400 });
   }
 }

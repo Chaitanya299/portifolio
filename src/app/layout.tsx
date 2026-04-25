@@ -27,7 +27,7 @@ export const metadata = {
   openGraph: {
     title: "Sai Chaitanya Parasana | Full Stack & AI Engineer",
     description: "Building real-time AI agents, RAG systems, and DevOps automation.",
-    url: process.env.NEXT_PUBLIC_APP_URL || "https://saichaitanya.dev",
+    url: process.env.NEXT_PUBLIC_APP_URL || "https://saichaitanyadev.vercel.app",
     siteName: "Sai's Portfolio",
     images: [
       {

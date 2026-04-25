@@ -25,7 +25,8 @@ export function Contact() {
   const { handleEmailClick } = useEmailAction();
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -62,7 +62,7 @@ spec:
         - name: NODE_ENV
           value: "production"
         - name: NEXT_PUBLIC_APP_URL
-          value: "https://saichaitanya.dev"
+          value: "https://saichaitanyadev.vercel.app"
 
 ---
 apiVersion: v1
